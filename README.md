@@ -19,7 +19,7 @@
 
 ## API
 - Использовать [TMDB API v3](https://www.themoviedb.org/documentation/api)
-- Для доступа к API нужно зарегестрироваться или просто использовать api_key: `5bdb545224b8012b6ddfc5c1c9406f02`
+- Для доступа к API нужно зарегестрироваться
 - Для поиска фильмов использовать метод [Search](https://developers.themoviedb.org/3/search/search-movies)
 - Для получения популярных фильмов использовать метод [Discover](https://developers.themoviedb.org/3/discover/movie-discover)
 - Как формировать полный url для картинок описано в методе [Configuration](https://developers.themoviedb.org/3/configuration/get-api-configuration)
