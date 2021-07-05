@@ -49,6 +49,7 @@ export default function MediaMain() {
     setPage(1)
   };
 
+  //Зависает, если пробую реализовать бесконечный скролл
   const onScroll = () => {
     if (loading) return
     const windowHeight = window.innerHeight
@@ -60,7 +61,8 @@ export default function MediaMain() {
     }
   }
 
-  window.addEventListener('scroll', onScroll)
+  
+  //window.addEventListener('scroll', onScroll)
 
   function createCard(){
     const imageUrl = "https://image.tmdb.org/t/p/w300/";
@@ -73,10 +75,10 @@ export default function MediaMain() {
     ))
   }
 
-  // function onnloadMore(){
-  //   setPage(page+1)
-  //   setLoading(true)
-  // }
+  function onnloadMore(){
+    setPage(page+1)
+    setLoading(true)
+  }
 
   return (
     <Container maxWidth={'lg'}>  
@@ -84,11 +86,11 @@ export default function MediaMain() {
       <FindPanel hundleSubmit={hundleSubmit}/>
     </Box>
     <Box m={2}>
-        <Grid container spacing={3} style={{textAlign: 'center'}}>
+        <Grid container spacing={3} style={{textAlign: 'center'}} justify='center' alignItems='center'>
             {createCard()}
             {loading ? <Grid item lg={12} md={12} xs={12}><CircularProgress/></Grid>: ''}
         </Grid>
-        {/* {page < totalPages ? <Button onClick={onnloadMore} variant="outlined" size="medium" color="primary"> Загрузить еще </Button> : ''} */}
+        {page < totalPages ? <Button className='onloadMore' onClick={onnloadMore} variant="outlined" size="medium" color="primary"> Загрузить еще </Button> : ''}
     </Box>
     </Container>
   );

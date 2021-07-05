@@ -6,7 +6,6 @@ import './index.css';
 const useStyles = makeStyles({
     textFiled: {
         width: '100%',
-        minWidth: '300px',
       },
     searchButton:{
       width: '120px'
