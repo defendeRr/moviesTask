@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Тестовое задание (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Создание страницу для поиска фильмов.
 
-## Available Scripts
+## Условия
++ На странице должны быть фильтры для поиска и список карточек с краткой информацией о найденых фильмах.
+- Список фильмов
+  + По умолчанию и без заданных фильтров отображается список самых популярных фильмов.
+  + Карточка состоит из обложки фильма, названия, даты премьеры.
+  + При желании можно сделать чтобы по клику на карточку открывался диалог с кратким описанием фильма
+  - Во время загрузки отображается лоадер
+  + Если ничего не найдено - отображается соответсвующий текст.
+  - При желении можно сделать бесконечный пэйджинг (запрашивать следующую страницу при достижения конца списка)
++ Фильтры
+  + Текстовое поле для поиска
+  + Кнопка найти
++ Расположение элементов на свое усмотрение. Можно поискать какой-нибудь аналог среди популярных сервисов или [например](https://www.themoviedb.org/movie)
+  + т.к четкого макета нет, то в первую очередь будет оцениваться чистота кода. Интерфейс можно собрать из готовых компоентов Material UI.
 
-In the project directory, you can run:
+## API
+- Использовать [TMDB API v3](https://www.themoviedb.org/documentation/api)
+- Для доступа к API нужно зарегестрироваться или просто использовать api_key: `5bdb545224b8012b6ddfc5c1c9406f02`
+- Для поиска фильмов использовать метод [Search](https://developers.themoviedb.org/3/search/search-movies)
+- Для получения популярных фильмов использовать метод [Discover](https://developers.themoviedb.org/3/discover/movie-discover)
+- Как формировать полный url для картинок описано в методе [Configuration](https://developers.themoviedb.org/3/configuration/get-api-configuration)
+  - Сам метод можно не использовать, а просто захардкодить определенный baseUrl
 
-### `npm start`
+## Стэк
+- Использовать [React](https://ru.reactjs.org/)
+- Для построения интерфейса использовать компоненты из [Material UI](https://material-ui.com/ru/)
+- Использовать [React  hooks](https://ru.reactjs.org/docs/hooks-intro.html)
+- Для создания приложения можно использовать [Create React App](https://ru.reactjs.org/docs/create-a-new-react-app.html#create-react-app)
+- Использовать Type Script. Можно сразу выбрать шаблон при создании приложения через [Create React App](https://create-react-app.dev/docs/adding-typescript/)
+- Для отправки ajax запросов к API использовать [axios](https://github.com/axios/axios)
+- Приложение должно работать в последней версии Chrome
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
