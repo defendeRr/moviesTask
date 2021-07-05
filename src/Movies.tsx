@@ -24,7 +24,7 @@ export default function MediaMain() {
             include_video : false,
             with_watch_monetization_types : 'flatrate'
           })
-  })
+  }, [query, page])
 
   function getCardsApi(action : String, data: object){
     axios.get(`https://api.themoviedb.org/3/${action}/movie?`,{
@@ -35,6 +35,7 @@ export default function MediaMain() {
       }, data)
     })
       .then(res => {
+        console.log('юсэффект')
         setCards(page>1 ? (prevCards) => [...prevCards.slice(0, ((page-1)*cardsOnPage)), ...res.data.results]
                         : res.data.results);
         setTotalPages(res.data.total_pages)
@@ -62,7 +63,7 @@ export default function MediaMain() {
   }
 
   
-  //window.addEventListener('scroll', onScroll)
+  window.addEventListener('scroll', onScroll)
 
   function createCard(){
     const imageUrl = "https://image.tmdb.org/t/p/w300/";
@@ -90,7 +91,7 @@ export default function MediaMain() {
             {createCard()}
             {loading ? <Grid item lg={12} md={12} xs={12}><CircularProgress/></Grid>: ''}
         </Grid>
-        {page < totalPages ? <Button className='onloadMore' onClick={onnloadMore} variant="outlined" size="medium" color="primary"> Загрузить еще </Button> : ''}
+        {/* {page < totalPages ? <Button className='onloadMore' onClick={onnloadMore} variant="outlined" size="medium" color="primary"> Загрузить еще </Button> : ''} */}
     </Box>
     </Container>
   );
