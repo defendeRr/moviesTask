@@ -16,12 +16,18 @@ export default function MediaFilter({hundleSubmit}: any) {
     const classes = useStyles();
   
     return (
+        //CR: Лучше следить за значениями формы в этом компоненте, а не передавать событие onSubmit в другой компонент. Тем более форма может быть более сложной. У нее может быть валидация, и т.п..
         <form noValidate onSubmit={hundleSubmit}> 
         <Grid container
               spacing={3}
               justify="center"
               alignItems="center">
             <Grid item lg={10} md={10} xs={12}>
+                {/*
+                    CR:
+                    Отслеживание состояния компонентов формы https://ru.reactjs.org/docs/forms.html#handling-multiple-inputs
+                    Там есть пример, только надо переделать на хуки
+                */}
                 <TextField
                 className={classes.textFiled}
                 id="outlined-basic"

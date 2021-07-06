@@ -93,6 +93,7 @@ export default function MediaCard({movieName, date, image, overview}: CardProps)
     <>
     <Card className={classes.root} onClick={handleClickOpen}>
       <CardActionArea>
+        {/* CR: Зачем пустая строка у image и title? */}
         <CardMedia
           className={classes.media}
           image={""+image}
@@ -108,6 +109,7 @@ export default function MediaCard({movieName, date, image, overview}: CardProps)
         </CardContent>
       </CardActionArea>
     </Card>
+    {/* CR: Для простоты тоже иногда так делаю. Но с точки зрения оптимизации это не правильно. Сейчас у тебя для каждой карточки свой диалог. Правильнее чтобы был один общий диалог для всех карточек. И передавать в него объект карточки в handleClickOpen*/}
     <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
     <DialogTitle id="customized-dialog-title" onClose={handleClose}>
       {movieName}
